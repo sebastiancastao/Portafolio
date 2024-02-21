@@ -8,10 +8,32 @@
     <title>Document</title>
 </head>
 <body>
+    <video id=background src="\assets\production_id_5091624 (1080p).mp4" autoplay loop muted></video>
+    
     <header>
-    <h1>Sebastián Castaño</h1>
+        
+    <div class="navbar">
+    <div class="nombre">
+    <h1>Sebastián</h1>
+    <h3>Castaño</h3>
+    </div>
+    <div class="opciones">
+        <p>Home</p>
+        <span>/</span>
+        <p>About</p>
+        <span>/</span>
+        <p>Contact</p>
+    </div>
+    
+    </div>
+    <br>
+    <hr>
+
    </header>
+   
+   
    <main>
+    
     <section class="Sobre_Mi" name="Sobre_Mi" id="Sobre_Mi">
         <h4>¿Quien Soy?</h4>
         <br>
@@ -49,20 +71,23 @@
     <br>
     <section class="Mis_Actividades_Favoritas" name="Mis_Tecnologias_Favoritas" id="Mis_Tecnologias_Favoritas">
         
-        <form method="post">
+        <!-- //<form method="post"> -->
         <p>Mis Actividades Favoritas</p>
-        <input name="titulo" type="text" placeholder="Nombre de la Actividad"/>
-        <textarea name="descripcion" type="text" id="descripcion" placeholder="Descripción"></textarea>
-        <input name="url_de_imagen" type="text" placeholder="URL de la Imagen"/>
-        <button><strong>Agregar Actividad</strong> </button>
-        </form>
+        <input name="titulo" id="titulo" type="text" placeholder="Nombre de la Actividad"/>
+        <textarea name="descripcion"  id="descripcion" type="text" id="descripcion" placeholder="Descripción"></textarea>
+        <input name="url_de_imagen"  id="url_de_imagen" type="text" placeholder="URL de la Imagen"/>
+        <button id="botonAgregar"><strong>Agregar Actividad</strong> </button>
+        <!-- </form> -->
     </section>
-</main>
-    <section class="imagen">
-        <img src="">
-        <p>No hay actividades</p>
+    <br>
+    <p id="nohayactividades">No hay actividades</p>
+    <section class="imagen" id="contenedorimagenes">
+        
+        
 
     </section>
+</main>
+    
     <script src="./scripts/index.js"></script>
 </body>
 </html>
