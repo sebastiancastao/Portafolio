@@ -13,13 +13,13 @@ class Activity{
 class Repository{
     constructor(){
         this.activities=[];
-        //this.id=0;
+        
         
 
     }
 
     createActivity(title,description,imgUrls){
-        //let id=this.id++;
+       
 
         let localactivity=new Activity(title,description,imgUrls);
         this.activities.push(localactivity);
@@ -79,118 +79,122 @@ const rep=new Repository();
 
 
 
-let titulo=document.getElementById("titulo");
-let descripcion=document.getElementById("descripcion");
-let url_de_imagen=document.getElementById("url_de_imagen");
-const botonAgregar=document.getElementById("botonAgregar");
+// let titulo=document.getElementById("titulo");
+// let descripcion=document.getElementById("descripcion");
+// let url_de_imagen=document.getElementById("url_de_imagen");
+// const botonAgregar=document.getElementById("botonAgregar");
 
-function formatoImagen(imagen){
-    imag=`assets\img\ ${imagen}`
-    return imag;
-}
+// function formatoImagen(imagen){
+//     imag=`assets\img\ ${imagen}`
+//     return imag;
+// }
 
 
-function activityToHtml(activity){
-    const div = document.createElement("div");
-    const titleDOM=document.createElement("h3");
-    const descriptionDOM=document.createElement("p");
-    const imageDOM=document.createElement("img");
+// function activityToHtml(activity){
+//     const div = document.createElement("div");
+//     const titleDOM=document.createElement("h3");
+//     const descriptionDOM=document.createElement("p");
+//     const imageDOM=document.createElement("img");
 
-    console.log(activity);
+//     console.log(activity);
 
-    const{elemento}=activity;
+//     const{elemento}=activity;
 
-    const{title,description,imgUrl,id}=elemento;
-    console.log(title);
+//     const{title,description,imgUrl,id}=elemento;
+//     console.log(title);
 
-    titleDOM.innerHTML=`Titulo: ${title}`;
+//     titleDOM.innerHTML=`Titulo: ${title}`;
     
-    descriptionDOM.innerHTML=`Descripción: ${description}`;
-    imageDOM.src=formatoImagen(imgUrl);
-    div.classList.add("TarjetaActividad");
-    imageDOM.classList.add("ImagenTarjeta");
-    div.id=id;
-    div.addEventListener("click",eliminar);
-    div.appendChild(titleDOM);
-    div.appendChild(descriptionDOM);
-    div.appendChild(imageDOM);
-    return div;
+//     descriptionDOM.innerHTML=`Descripción: ${description}`;
+//     imageDOM.src=formatoImagen(imgUrl);
+//     div.classList.add("TarjetaActividad");
+//     imageDOM.classList.add("ImagenTarjeta");
+//     div.id=id;
+//     div.addEventListener("click",eliminar);
+//     div.appendChild(titleDOM);
+//     div.appendChild(descriptionDOM);
+//     div.appendChild(imageDOM);
+//     return div;
 
-}
+// }
 
 
 
-function activitiesToHtml(rep){
-    const contenedor= document.getElementById("contenedorimagenes");
+// function activitiesToHtml(rep){
+//     const contenedor= document.getElementById("contenedorimagenes");
     
     
-    console.log(contenedor.innerHTML+"hola");
-    contenedor.innerHTML="";
+    
+//     contenedor.innerHTML="";
     
   
 
-    repo=rep.getAllActivities();
+//     repo=rep.getAllActivities();
 
-   console.log(contenedor.innerHTML+"hola2");
-//   
+   
+// //   
    
     
-    arrayactividades=repo.map(elemento=>activityToHtml({elemento}));
+//     arrayactividades=repo.map(elemento=>activityToHtml({elemento}));
 
     
-    arrayactividades.forEach((element) => {
-        contenedor.append(element);
+//     arrayactividades.forEach((element) => {
+//         contenedor.append(element);
         
-    }); 
+//     }); 
     
 
     
-}
+// }
 
-function handler(){
+// function handler(){
     
-    let titu=titulo.value;
-    let desc=descripcion.value;
-    let image=url_de_imagen.value;
-    let letrero=document.getElementById("nohayactividades");
-    letrero.style.display="none";
+//     let titu=titulo.value;
+//     let desc=descripcion.value;
+//     let image=url_de_imagen.value;
+//     let letrero=document.getElementById("nohayactividades");
+//     letrero.style.display="none";
 
     
 
-    if(titu==""||desc==""||image==""){
-        return alert("Hay Campos Vacíos");
+//     if(titu==""||desc==""||image==""){
+//         return alert("Hay Campos Vacíos");
         
-    }else{
+//     }else{
     
-     rep.createActivity(titu,desc,image);
-     activitiesToHtml(rep);
+//      rep.createActivity(titu,desc,image);
+//      activitiesToHtml(rep);
      
     
 
      
 
-    }
+//     }
 
-    titulo.value="";
-    descripcion.value="";
-    url_de_imagen.value="";
+//     titulo.value="";
+//     descripcion.value="";
+//     url_de_imagen.value="";
     
 
 
+// }
+// botonAgregar.addEventListener("click", handler);
+
+
+
+// function eliminar(event){
+//     id=event.target.id;
+//     div=document.getElementById(id);
+//     div.remove();
+    
+
+    
+
+
+
+// }
+
+module.exports={
+    Repository,
+    Activity,
 }
-botonAgregar.addEventListener("click", handler);
-
-
-
-function eliminar(event){
-    id=event.target.id;
-    div=document.getElementById(id);
-    div.remove();
-    
-
-    
-
-
-
-}
-
